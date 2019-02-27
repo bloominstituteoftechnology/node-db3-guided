@@ -305,6 +305,8 @@ exports.seed = function(knex, Promise) {
 };
 ```
 
+Run the seed files by typing: `npx knex seed:run`.
+
 Run the API and test it out from Postman, all endpoints should still work, only now they are working with the new database we created using migrations and seeding.
 
 **wait for students to catch up, use a `yes/no` poll to let students tell you when they are done**
