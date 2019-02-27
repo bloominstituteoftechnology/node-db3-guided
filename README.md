@@ -180,6 +180,8 @@ Show that typing `npx knex` in the terminal will show a list of possible command
 
 ## Use Knex init to Generate knexfile.js
 
+Add a folder that will contain the database and the migrations and seeding scripts, we're calling it `data` for this example.
+
 By default, `Knex Migrations` will look for the information needed to configure `knex` inside a file named `knexfile.js` that should be at the root folder of the application.
 
 To have knex generate that file automatically just type: `npx knex init`.
@@ -192,10 +194,17 @@ To have knex generate that file automatically just type: `npx knex init`.
 module.exports = {
   development: {
     client: 'sqlite3',
+    useNullAsDefault: true, // needed for sqlite
+    // create the data folder manually
     connection: {
       filename: './data/rolex.db3', // the name for the database file to use, adjust as needed
     },
-    useNullAsDefault: true, // needed for sqlite
+    migrations: {
+      directory: './data/migrations', // the migrations folder is added to the root by default, this moves it to /data
+    },
+    seeds: {
+      directory: './data/seeds', // the seeds folder is added to the root by default, this moves it to /data
+    },
   },
 };
 ```
