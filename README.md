@@ -116,6 +116,21 @@ Do not take too much time, do a quick and brief run down of the normal forms. A 
 
 Our model is in 3NF.
 
+## Configure Location for Migrations and Seeds
+
+To change the location of the folder for `migrations` and `seeds`, add the following to `knexfile.js`:
+
+```js
+migrations: {
+  // we can change the location of the migrations
+  directory: './data/migrations',
+},
+seeds: {
+  // we can change the location of the seeds
+  directory: './data/seeds',
+},
+```
+
 ## Build a Migration for The Model
 
 Make and run a migration called `bootstrap` that will generate the database.
@@ -255,6 +270,20 @@ exports.seed = function(knex, Promise) {
 ```
 
 **wait for students to catch up**
+
+## Enable Foreign Key Constraints for SQLite
+
+By default SQLite ignores `Foreign Keys`. To enable them add the following to `knexfile.js`:
+
+```js
+pool: {
+  // runs after a connection is made to the sqlite engine
+  afterCreate: (conn, done) => {
+    // by default SQLite will not enforce Foreign Keys
+    conn.run('PRAGMA foreign_keys = ON', done); // turn on FK enforcement
+  },
+},
+```
 
 ## Extract Knex Configuration
 
