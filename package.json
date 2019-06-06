@@ -18,13 +18,13 @@
   },
   "homepage": "https://github.com/LambdaSchool/webdb-iv-guided#readme",
   "dependencies": {
-    "express": "^4.16.4",
-    "helmet": "^3.16.0",
-    "knex": "^0.16.3",
-    "sqlite3": "^4.0.6"
+    "express": "^4.17.1",
+    "helmet": "^3.18.0",
+    "knex": "^0.17.3",
+    "sqlite3": "^4.0.8"
   },
   "devDependencies": {
     "knex-cleaner": "^1.1.4",
-    "nodemon": "^1.18.10"
+    "nodemon": "^1.19.1"
   }
 }
