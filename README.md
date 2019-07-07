@@ -15,4 +15,4 @@ Guided project for **Web DB III** Module.
 - [ ] type `yarn` or `npm i` to download dependencies.
 - [ ] type `yarn server` or `npm run server` to start the API.
 
-Please follow along as the instructor uses Knex migrations and seeding to manage the database schema and add test data.
+Please follow along as the instructor uses Knex migrations and seeding to create a multi-table database schema.
