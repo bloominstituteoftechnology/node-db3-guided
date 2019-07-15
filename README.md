@@ -1,6 +1,6 @@
-# Web DB III Guided Project
+# Web DB IV Guided Project
 
-Guided project for **Web DB III** Module.
+Guided project for **Web DB IV** Module.
 
 ## Prerequisites
 
@@ -15,4 +15,4 @@ Guided project for **Web DB III** Module.
 - [ ] type `yarn` or `npm i` to download dependencies.
 - [ ] type `yarn server` or `npm run server` to start the API.
 
-Please follow along as the instructor creates database access methods for a multi table schema. 
+Please follow along as the instructor creates database access methods for a multi table schema.
