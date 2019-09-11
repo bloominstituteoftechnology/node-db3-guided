@@ -77,4 +77,15 @@ router.delete('/:id', (req, res) => {
   });
 });
 
+router.get('/:id/posts', (req, res) => {
+  db('posts as p')
+  .join('users as u', 'u.id', '=', 'p.user_id' )
+  .then(posts => {
+    res.status(200).json(posts)
+  })
+  .catch(error => {
+    res.send(error)
+  })
+})
+
 module.exports = router;
