@@ -10,12 +10,12 @@
   "author": "Lambda School",
   "dependencies": {
     "express": "^4.17.1",
-    "helmet": "^3.20.0",
-    "knex": "^0.19.1",
+    "helmet": "^3.21.0",
+    "knex": "^0.19.4",
     "knex-cleaner": "^1.3.0",
-    "sqlite3": "^4.0.9"
+    "sqlite3": "^4.1.0"
   },
   "devDependencies": {
-    "nodemon": "^1.19.1"
+    "nodemon": "^1.19.2"
   }
 }
