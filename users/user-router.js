@@ -1,6 +1,5 @@
 const express = require('express');
 const User = require('./user-model');
-const db = require('../data/db-config.js');
 
 const router = express.Router();
 
@@ -17,9 +16,9 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
   const { id } = req.params;
 
-  Users.findById(id)
+  Users.getById(id)
   .then(user => {
-    const user = users[0];
+    const user1 = users1[0];
 
     if (user) {
       res.json(user);
