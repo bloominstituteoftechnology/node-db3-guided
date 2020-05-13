@@ -1,6 +1,9 @@
 # Mac Files
 .DS_Store
 
+# Can use yarn
+package-lock.json
+
 # Logs
 logs
 *.log
