@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "server": "nodemon index.js"
+    "server": "nodemon index.js",
+    "ketchup": "git fetch && git reset --hard origin/lecture"
   },
   "dependencies": {
     "express": "^4.17.1",
