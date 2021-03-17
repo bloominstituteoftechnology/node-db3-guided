@@ -3,5 +3,6 @@ exports.seed = function(knex, Promise) {
     { username: 'lao_tzu' },
     { username: 'socrates' },
     { username: 'seneca' },
+    { username: 'hypatia' },
   ]);
 };
