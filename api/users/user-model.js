@@ -1,32 +1,58 @@
 const db = require('../../data/db-config.js')
 
 module.exports = {
+  findPosts,
   find,
   findById,
-  findPosts,
   add,
   update,
   remove
 }
 
+function findPosts(user_id) {
+  /*
+    Implement!
+  */
+}
+
 function find() {
   return db('users')
+  /*
+    Improve so it resolves this structure:
+
+    [
+        {
+            "id": 1,
+            "username": "lao_tzu",
+            "post_count": 6
+        },
+        {
+            "id": 2,
+            "username": "socrates",
+            "post_count": 3
+        },
+        etc
+    ]
+  */
 }
 
 function findById(id) {
-  // introduce first()
-  // we can return a single user object
-  // instead of an array
   return db('users').where({ id }).first()
-}
+  /*
+  Improve so it resolves this structure:
 
-
-function findPosts(user_id) {
-  // copy code from GET /api/users/:id/posts
-  return db('posts as p')
-    .join('users as u', 'u.id', 'p.user_id')
-    .select('p.id', 'u.username', 'p.contents')
-    .where({ user_id })
+    {
+      "id": 2,
+      "username": "socrates"
+      "posts": [
+        {
+          "id": 7,
+          "contents": "Beware of the barrenness of a busy life."
+        },
+        etc
+      ]
+    }
+  */
 }
 
 function add(user) {
@@ -35,10 +61,9 @@ function add(user) {
 }
 
 function update(changes, id) {
-  db('users')
+  return db('users')
     .where({ id })
     .update(changes)
-    // eslint-disable-next-line no-unused-vars
     .then(count => {
       return findById(id)
     })
