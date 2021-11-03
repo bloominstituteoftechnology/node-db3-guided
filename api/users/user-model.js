@@ -39,7 +39,7 @@ function find() {
 function findById(id) {
   return db('users').where({ id }).first()
   /*
-  Improve so it resolves this structure:
+    Improve so it resolves this structure:
 
     {
       "id": 2,
