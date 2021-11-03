@@ -11,7 +11,16 @@ module.exports = {
 
 function findPosts(user_id) {
   /*
-    Implement!
+    Implement so it resolves this structure:
+
+    [
+      {
+          "post_id": 10,
+          "contents": "Trusting everyone is...",
+          "username": "seneca"
+      },
+      etc
+    ]
   */
 }
 
@@ -22,12 +31,12 @@ function find() {
 
     [
         {
-            "id": 1,
+            "user_id": 1,
             "username": "lao_tzu",
             "post_count": 6
         },
         {
-            "id": 2,
+            "user_id": 2,
             "username": "socrates",
             "post_count": 3
         },
@@ -42,11 +51,11 @@ function findById(id) {
     Improve so it resolves this structure:
 
     {
-      "id": 2,
+      "user_id": 2,
       "username": "socrates"
       "posts": [
         {
-          "id": 7,
+          "post_id": 7,
           "contents": "Beware of the barrenness of a busy life."
         },
         etc
