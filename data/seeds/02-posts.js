@@ -1,4 +1,4 @@
-exports.seed = function (knex, Promise) {
+exports.seed = function (knex) {
   return knex('posts').insert([
     { contents: "Let your workings remain a mystery. Just show people the results.", user_id: 1 },
     { contents: "True mastery can be gained by letting things go their own way. It can't be gained by interfering.", user_id: 1 },
@@ -12,5 +12,5 @@ exports.seed = function (knex, Promise) {
     { contents: "Trusting everyone is as much a fault as trusting no one (though I should call the first the worthier and the second the safer behaviour.", user_id: 3 },
     { contents: "At whatever point you leave life if you leave it in the right way, it is a whole.", user_id: 3 },
     { contents: "Reserve your right to think, for even to think wrongly is better than not to think at all." },
-  ]);
-};
+  ])
+}
