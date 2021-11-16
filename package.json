@@ -20,7 +20,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/LambdaSchool/node-db3-guided.git"
+    "url": "git+https://github.com/BloomInstituteOfTechnology/node-db3-guided.git"
   },
   "license": "ISC"
 }
