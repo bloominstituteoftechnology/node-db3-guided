@@ -1,90 +1,47 @@
 const express = require('express')
-
-const Users = require('./user-model.js')
+const User = require('./user-model')
+const { checkUserData, checkUserId } = require('./user-middleware')
 
 const router = express.Router()
 
 router.get('/', (req, res, next) => {
-  Users.find()
+  User.find()
     .then(users => {
       res.json(users)
     })
-    .catch(err => {
-      next(err)
-    })
+    .catch(next)
 })
 
-router.get('/:id', (req, res, next) => {
-  const { id } = req.params
-
-  Users.findById(id)
+router.get('/:id', checkUserId, (req, res, next) => {
+  User.findById(req.params.id)
     .then(user => {
-      if (user) {
-        res.json(user)
-      } else {
-        next({ message: 'Could not find user with given id.', status: 404 })
-      }
+      res.json(user)
     })
-    .catch(err => {
-      next(err)
-    })
+    .catch(next)
 })
 
-router.get('/:id/posts', (req, res, next) => {
-  const { id } = req.params
-
-  Users.findPosts(id)
+router.get('/:id/posts', checkUserId, (req, res, next) => {
+  User.findPosts(req.params.id)
     .then(posts => {
       res.json(posts)
     })
-    .catch(err => {
-      next(err)
-    })
+    .catch(next)
 })
 
-router.post('/', (req, res, next) => {
-  const userData = req.body
-
-  Users.add(userData)
+router.post('/', checkUserData, (req, res, next) => {
+  User.add(req.body)
     .then(newUser => {
       res.status(201).json(newUser)
     })
-    .catch(err => {
-      next(err)
-    })
+    .catch(next)
 })
 
-router.put('/:id', (req, res, next) => {
-  const { id } = req.params
-  const changes = req.body
-
-  Users.update(changes, id)
-    .then(user => {
-      if (user) {
-        res.json({ user })
-      } else {
-        next({ message: 'Could not find user with given id.', status: 404 })
-      }
-    })
-    .catch(err => {
-      next(err)
-    })
-})
-
-router.delete('/:id', (req, res, next) => {
-  const { id } = req.params
-
-  Users.remove(id)
+router.delete('/:id', checkUserId, (req, res, next) => {
+  User.remove(req.params.id)
     .then(count => {
-      if (count) {
-        res.json({ removed: count })
-      } else {
-        next({ message: 'Could not find user with given id.', status: 404 })
-      }
+      res.json({ removed: count })
     })
-    .catch(err => {
-      next(err)
-    })
+    .catch(next)
 })
 
 module.exports = router

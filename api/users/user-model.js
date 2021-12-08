@@ -65,8 +65,11 @@ function findById(id) {
 }
 
 function add(user) {
-  // returns an array with new user id
-  return db('users').insert(user)
+  return db('users')
+    .insert(user)
+    .then(([id]) => { // eslint-disable-line
+      return findById(id)
+    })
 }
 
 function update(changes, id) {
