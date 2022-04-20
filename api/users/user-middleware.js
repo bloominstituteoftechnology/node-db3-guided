@@ -14,6 +14,7 @@ module.exports = {
       next({ message: 'Could not find user with given id.', status: 404 })
     } else {
       req.body.username = req.body.username.trim()
+      next();
     }
   }
 }
