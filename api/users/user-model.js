@@ -66,7 +66,12 @@ async function findById(id) {
     .where('users.id', id)
     .select('username', 'users.id as user_id', 'posts.id as post_id', 'contents');
 
-  return result;
+  const user = {
+    username: result[0].username,
+    user_id: result[0].user_id,
+  };
+
+  return user;
 
   /*
     Improve so it resolves this structure:
