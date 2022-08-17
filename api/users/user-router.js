@@ -20,7 +20,7 @@ router.get('/:id', checkUserId, (req, res, next) => {
     .catch(next)
 })
 
-router.get('/:id/posts', checkUserId, (req, res, next) => {
+router.get('/:id/posts', /*checkUserId,*/ (req, res, next) => {
   User.findPosts(req.params.id)
     .then(posts => {
       res.json(posts)
