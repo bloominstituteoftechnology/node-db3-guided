@@ -32,7 +32,8 @@ function find() {
   return db('users')
     .join('posts', 'user_id', 'users.id')
     .groupBy('users.id')
-    .count('username')
+    .count('username as post_count')
+    .select('user_id', 'username')
   /*
     Improve so it resolves this structure:
 
