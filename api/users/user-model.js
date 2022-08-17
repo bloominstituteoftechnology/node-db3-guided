@@ -30,7 +30,7 @@ function findPosts(user_id) {
 
 function find() {
   return db('users')
-    .join('posts', 'user_id', 'users.id')
+    .leftJoin('posts', 'user_id', 'users.id')
     .groupBy('users.id')
     .count('username as post_count')
     .select('user_id', 'username')
