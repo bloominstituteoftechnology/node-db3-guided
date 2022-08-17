@@ -9,6 +9,7 @@ module.exports = {
 }
 
 function findPosts(user_id) {
+  return db('posts').where('user_id', user_id)
   /*
     Implement so it resolves this structure:
 
