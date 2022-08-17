@@ -12,7 +12,7 @@ router.get('/', (req, res, next) => {
     .catch(next)
 })
 
-router.get('/:id', /*checkUserId,*/ (req, res, next) => {
+router.get('/:id', checkUserId, (req, res, next) => {
   User.findById(req.params.id)
     .then(user => {
       res.json(user)
