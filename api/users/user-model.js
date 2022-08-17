@@ -73,7 +73,9 @@ async function findById(id) {
   };
 
   for(const row of result) {
-    user.posts.push({ post_id: row.post_id, contents: row.contents })
+    if(row.post_id != null) {
+      user.posts.push({ post_id: row.post_id, contents: row.contents })
+    }
   }
 
   return user;
