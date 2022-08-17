@@ -53,7 +53,7 @@ function find() {
   */
 }
 
-function findById(id) {
+async function findById(id) {
   // select *
 
   // from users
@@ -61,9 +61,12 @@ function findById(id) {
 
   // where users.id = 4
 
-  return db('users')
+  const result = await db('users')
     .leftJoin('posts', 'users.id', 'user_id')
     .where('users.id', id)
+    .select('username', 'users.id as user_id', 'posts.id as post_id', 'contents');
+
+  return result;
 
   /*
     Improve so it resolves this structure:
