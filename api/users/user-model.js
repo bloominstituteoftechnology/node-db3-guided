@@ -10,7 +10,7 @@ module.exports = {
 
 function findPosts(user_id) {
   return db('posts')
-    .select('contents', 'id as post_id', 'username')
+    .select('contents', 'posts.id as post_id', 'username')
     .where('user_id', user_id)
     // JOIN users ON posts.user_id = users.id
     .join('users', 'posts.user_id', 'users.id')
