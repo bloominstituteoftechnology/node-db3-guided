@@ -30,6 +30,7 @@ function findPosts(user_id) {
 
 function find() {
   return db('users')
+    .join('posts', 'user_id', 'users.id')
   /*
     Improve so it resolves this structure:
 
