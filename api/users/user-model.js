@@ -69,7 +69,12 @@ async function findById(id) {
   const user = {
     username: result[0].username,
     user_id: result[0].user_id,
+    posts: [],
   };
+
+  for(const row of result) {
+    user.posts.push({ post_id: row.post_id, contents: row.contents })
+  }
 
   return user;
 
