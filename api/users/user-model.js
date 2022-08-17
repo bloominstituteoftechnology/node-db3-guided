@@ -54,7 +54,17 @@ function find() {
 }
 
 function findById(id) {
-  return db('users').where({ id }).first()
+  // select *
+
+  // from users
+  // left join posts on users.id = user_id
+
+  // where users.id = 4
+
+  return db('users')
+    .leftJoin('posts', 'users.id', 'user_id')
+    .where('users.id', id)
+
   /*
     Improve so it resolves this structure:
 
