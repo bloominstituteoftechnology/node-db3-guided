@@ -11,7 +11,7 @@
     "resetnorthwind": "cp -rf ./data/northwind/backup.db3 ./data/northwind/northwind.db3"
   },
   "dependencies": {
-    "sqlite3": "^5.1.4",
+    "sqlite3": "^5.1.5",
     "express": "^4.18.2",
     "knex": "^2.4.2",
     "knex-cleaner": "^1.3.1"
